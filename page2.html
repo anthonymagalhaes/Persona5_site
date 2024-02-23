@@ -1,0 +1,162 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0" />
+  
+   <style media="screen">
+    .container {
+	  transition: all 1.2s ease; 
+      width: 200px;
+      height: 50px;
+      border: 1px solid #CCC;
+      margin: 0 auto 60px;
+      position: relative;
+      -webkit-perspective: 600px;
+         -moz-perspective: 600px;
+           -o-perspective: 600px;
+              perspective: 600px;
+    }
+	
+	.abs {
+		position: absolute;
+		top: 200px;
+		right: 400px;
+	}
+
+    .panel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+	  right: 0px;
+      opacity: 0.7;
+      color: white;
+      background: red;
+	  transition: all 1s ease; 	  
+    }
+	
+	#gun .panel {	
+		padding-top: 1em;
+		padding-left: 2em;
+		font-size: 1.5em;
+	      -webkit-transform: rotateY( 55deg );
+             -moz-transform: rotateY( 55deg );
+               -o-transform: rotateY( 55deg );
+                  transform: rotateY( 55deg );
+				  
+	}
+	
+	.neutral {
+	  -webkit-transform: rotateZ( -15deg );
+         -moz-transform: rotateZ( -15deg );
+           -o-transform: rotateZ( -15deg );
+              transform: rotateZ( -15deg );
+	}
+	
+	.zero {
+		  -webkit-transform: rotateX( 0deg );
+             -moz-transform: rotateX( 0deg );
+               -o-transform: rotateX( 0deg );
+                  transform: rotateX( 0deg );
+	}
+	
+	.one {
+	      -webkit-transform: rotateX( 45deg );
+             -moz-transform: rotateX( 45deg );
+               -o-transform: rotateX( 45deg );
+                  transform: rotateX( 45deg );
+	}
+	
+		.two {                        
+	      -webkit-transform: rotateX( 90deg );
+             -moz-transform: rotateX( 90deg );
+               -o-transform: rotateX( 90deg );
+                  transform: rotateX( 90deg );
+	}                                 
+	
+	.panelone {
+		width: 130%;
+	}
+	
+	.paneltwo {
+		width: 400%;		
+	}
+
+  </style>
+ <head>
+<body>
+
+  
+  <button onclick=switchy()>a button</button>
+  
+  
+<div id="ztilt" class="neutral">
+  <div id="gun" class="container abs">
+  <div class="panel" id = "gunpan">hello hello hello</div>
+ </div>
+  
+
+
+ </div> 
+ 
+ <script>
+ var once = function(object,event,callback){
+    var handle={};
+
+    var eventNames=event.split(" ");
+
+    var cbWrapper=function(){
+        eventNames.forEach(function(e){
+            //object.removeEventListener(e,cbWrapper, false );
+        });
+        callback.apply(this,arguments);
+    };
+
+    eventNames.forEach(function(e){
+        object.addEventListener(e,cbWrapper,false);
+    });
+
+    handle.cancel=function(){
+        eventNames.forEach(function(e){
+            object.removeEventListener(e,cbWrapper, false );
+        });
+    };
+
+    return handle;
+};
+
+ var haveSwitched = false;
+ var d = document.getElementById("gun");
+ var p = document.getElementById("gunpan");
+
+var handler = once(document.querySelector('#gun'), 'transitionend', function(){
+   console.log('transition completed');
+   if (haveSwitched)
+   {
+		console.log("I should hide now");
+		d.style.visibility = "hidden";
+		p.style.visibility = "hidden";
+   }
+});
+ 
+
+ var switchy = function () {
+     	d.style.visibility = "visible";
+		p.style.visibility = "visible";
+ if (!haveSwitched)
+ {
+  d.className = "container abs two";
+  p.className = "panel paneltwo";
+  haveSwitched = true;
+  }
+  else
+  {
+
+		  d.className = "container abs";
+		  p.className = "panel";
+		  haveSwitched = false;
+  }
+ }
+ </script>
+  
+</body> 
+  </html>

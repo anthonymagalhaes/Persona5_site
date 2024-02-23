@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <link rel="stylesheet" href="page1.css">
+    <head>
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+     </head>
+</head>
+<body>
+    <a href="/index.html"><img src="imagens/SEMAC_--removebg-preview.png" alt="" class="voltar"></a>
+    <div class="fundo"><img src="imagens/city-removebg.png" alt="" class="city"></div>
+    <script>
+    var currentTime = new Date().getHours();
+    if (6 <= currentTime && currentTime < 12) {
+       document.body.style.backgroundColor = "red";
+ 
+    }else if (12 <= currentTime && currentTime < 17) {
+
+        document.body.style.backgroundColor = "white";
+
+    }else {
+
+        document.body.style.backgroundColor = "red";
+
+    }
+</script>
+    <script>
+
+    $(function(){
+        $("#texto").hide();
+        });
+
+    var i = 2;
+    setInterval(function(){
+        $("#texto").fadeIn(2000).delay(5000);
+        $("#texto").fadeOut(2000, function(){
+            $("#texto").html("<h2>TEXTO "+ i +"</h2>");
+            i++;
+	    });
+        }, 2000);
+    </script> 
+    <div id="texto" class="header_title">
+        <h2>TEXTO 1</h2>
+        <h2>TEXTO 2</h2>
+    </div>
+    
+</body>
+</html>
