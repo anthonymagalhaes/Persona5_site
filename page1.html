@@ -9,26 +9,36 @@
 </head>
 <body>
     <a href="/index.html"><img src="imagens/SEMAC_--removebg-preview.png" alt="" class="voltar"></a>
-    <div class="fundo noite">
+    <div class="fundo ">
         <img src="imagens/city-removebg.png" alt="" class="city noite" id="noite">
-        <img src="imagens/pngegg.png" class="nuvem n3 np" id="noite">
-        <img src="imagens/pngegg.png" class="nuvem n1 nm" id="noite">
-        <img src="imagens/pngegg.png" class="nuvem n2 nf" id="noite">
+        <img src="imagens/pngegg.png" class="nuvem n3 np" id="n1">
+        <img src="imagens/pngegg.png" class="nuvem n1 nm" id="n2">
+        <img src="imagens/pngegg.png" class="nuvem n2 nf" id="n3">
     </div>
     <script>
     var currentTime = new Date().getHours();
     const noite = document.getElementById("noite")
+    const n1 = document.getElementById("n1")
+    const n2 = document.getElementById("n2")
+    const n3 = document.getElementById("n3")
+
     if (6 <= currentTime && currentTime < 12) {
        document.body.style.backgroundColor = "orange";
-       noite.style.filter
+       n1.style.filter = "brightness(120%)"
+       n2.style.filter = "brightness(120%)"
+       n3.style.filter = "brightness(120%)"
     }else if (12 <= currentTime && currentTime < 17) {
 
         document.body.style.backgroundColor = "lightblue";
-        
+        n1.style.filter = "brightness(150%)"
+        n2.style.filter = "brightness(150%)"
+        n3.style.filter = "brightness(150%)"
     }else {
-
         document.body.style.backgroundColor = "red";
-
+        noite.style.filter = "brightness(20%)"
+        n1.style.filter = "brightness(50%)"
+        n2.style.filter = "brightness(50%)"
+        n3.style.filter = "brightness(50%)"
     }
 
 </script>

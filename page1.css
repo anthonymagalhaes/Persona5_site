@@ -10,9 +10,11 @@ body{
 .fundo{
     display: flex;
     justify-content: center;
-    
+    padding-top: 700px;
 }
-
+body:hover .fundo{
+    transform: translateY(-500px);
+}
 
 .city{
     transition: ease-in-out 0.8s;
@@ -63,6 +65,7 @@ body{
     height: 300px;
     animation: n2 18.0s infinite alternate ;
 }
+
 @keyframes nuvem{
 0% {
  transform: translateX(55px);
