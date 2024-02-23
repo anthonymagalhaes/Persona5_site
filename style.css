@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/persona');
 *{
     padding: 0;
     margin: 0;
@@ -67,6 +68,7 @@ h1{
     margin-left: 30px;
 }
 .text{
+    
     color:white;
     z-index: 1;
     text-align: center;
@@ -81,18 +83,21 @@ footer{
     margin-top: 40px;
 }
 .botao{
+    position: relative;
     display: flex;
     color: white;
     text-decoration: none;
     font-size: 37px;
     font-weight: 900;
+    
 }
 .adaga{
     position: absolute;
-    right: 45vh;
-    top: 82px;
+    right: 40vh;
+    top: 45px;
     height: 183px;
     z-index: 99;
+    opacity: 0;
 }
 .effect1{
      transform: rotate(-15deg);
@@ -124,12 +129,14 @@ footer{
     margin-left: 40px;
 }
 .context{
-    font-size: 20px;
+    font-size: 15px;
+    font-family: 'Persona', sans-serif;
+    
 }
 .botao:hover{
        margin-top: 5px;
        transition: ease-in-out 0.1s;
-       color: red;
+       color: rgb(255, 0, 0);
 }
 .botao:hover .Oz{
     transform: rotate(-23deg);
@@ -138,12 +145,69 @@ footer{
 .botao:hover .Ks{
     transform: rotate(20deg);
     transition: ease-in 0.2s;
-    border: 1px solid red;
+    border: 1px solid rgb(255, 0, 0);
 }
 .botao:hover .excl{
     font-size: 170px;
     transition: ease-in 0.1s;
+    text-shadow: 5px 10px 2px white;
 }
+.botao:hover:after{
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 15%;
+    
+    background-color: rgb(255, 255, 255);
+    z-index: -1;
+    opacity: 1;
+    animation: tilt 0.8s;
+    
+}
+
+footer{
+    
+    perspective: 100px;
+}
+@keyframes tilt {
+    10% {
+      transform: rotateY(45deg);
+      transform: rotateX(60deg);
+      width: 160px;
+      height: 80px;
+    }
+    50%{
+        
+        transform: rotateY(180deg);
+        
+    }
+    55%{
+        transform: scale(0.001);
+        top: 25%;
+        right: -70%;
+        width: 500px;
+        height: 1px;
+        background-color: white;
+        box-shadow:none;
+    }
+    65%{
+        top: 25%;
+        right: -5%;
+        width: 200px;
+        height: 1px;
+        background-color: white;
+        box-shadow:none;
+    }
+    70%{
+        width: 0;
+    }
+    100% {
+    transform: rotateY(225deg);
+    transform: rotateZ(120deg);
+    width: 0;
+    }
+  }
+
 .fundo3{
     position: absolute;
     right: 49vh;
@@ -151,10 +215,11 @@ footer{
     height: 9px;
 }
 .efeito{
-    height: 137px;
+    
     filter: invert(1);
     opacity: 70%;
     z-index: -1;
+    opacity: 0;
 }
 .joker{
     position: absolute;
@@ -168,4 +233,19 @@ footer{
     right: -20px;
     bottom: -3px;
     filter: invert(1);
+}
+body:hover .adaga{
+    opacity: 1;
+    transition:  ease-in-out 0.1s;
+    top: 81px;
+    right: 45vh;
+}
+body:hover .efeito{
+    opacity: 1;
+    transition: ease-in 0.3s;
+    height: 137px;
+    
+}
+footer{
+    perspective: 500px;
 }

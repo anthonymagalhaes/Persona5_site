@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -9,7 +10,10 @@ body{
 .fundo{
     display: flex;
     justify-content: center;
+    
 }
+
+
 .city{
     transition: ease-in-out 0.8s;
     position: absolute;
@@ -29,4 +33,81 @@ body{
     padding: 20px;
     transform: rotate(-5deg);
     transition: ease-in-out 0.6s;
+}
+.nuvem{
+    height: 250px;
+    position: absolute;
+    z-index: -1;
+    transform: (-15deg);
+    top: 100px;
+    filter:brightness(90%);
+
+}
+.n3{
+    
+    left: 120px;
+    animation: n3 15.0s infinite alternate ;
+   
+    
+}
+.n1{
+    right: 800px;
+    height: 150px;
+
+    animation: nuvem 15.0s infinite alternate ;
+}
+.n2{
+    right: 10px;
+    transform: rotateY(180deg);
+    top: 120px;
+    height: 300px;
+    animation: n2 18.0s infinite alternate ;
+}
+@keyframes nuvem{
+0% {
+ transform: translateX(55px);
+}
+
+50%{
+transform: translateX(100px);
+}}
+@keyframes n3{
+    0% {   
+    transform: translate3d(10px, 10px, 0px);
+   rotate: -10deg;
+    } 
+
+    50%{
+        transform: translate3d(-160px, 55px, 0px);
+        rotate: -19deg;
+        
+    }
+
+    100%{
+        transform: translate3d(10px, 10px, 0px);
+        rotate: -10deg;
+     
+    }
+   
+
+}
+@keyframes n2{
+    0% {   
+    transform: translate3d(-10px, -10px, 0px);
+   rotate: 10deg;
+    } 
+
+    50%{
+        transform: translate3d(140px, 40px, 0px);
+        rotate: 19deg;
+        
+    }
+
+    100%{
+        transform: translate3d(-10px, -10px, 0px);
+        rotate: 10deg;
+     
+    }
+   
+
 }
