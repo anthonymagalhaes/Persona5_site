@@ -5,15 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page 1</title>
     <link rel="stylesheet" href="page1.css">
-     
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap')
+    </style>
 </head>
 <body>
+    <header>
+        <div class="horario" id="horas">10:00</div>
+        <div class="circulo lua sol" id="circulo"></div>
+    </header>
     <a href="/index.html"><img src="imagens/SEMAC_--removebg-preview.png" alt="" class="voltar"></a>
-    <div class="fundo ">
+    
+    <div class="fundo">
         <img src="imagens/city-removebg.png" alt="" class="city noite" id="noite">
-        <img src="imagens/pngegg.png" class="nuvem n3 np" id="n1">
-        <img src="imagens/pngegg.png" class="nuvem n1 nm" id="n2">
-        <img src="imagens/pngegg.png" class="nuvem n2 nf" id="n3">
+        <a href="/cinema.html" class="cinema icon"><img src="" alt=""><div class="text protest-revolution-regular">CINEMA</div></a>
+        <a href="/arcade.html" class="arcade icon"><img src="" alt=""><div class="text protest-revolution-regular">ARCADE</div></a>
+        <a href="/blog.html" class="blog icon"><img src="" alt=""><div class="text protest-revolution-regular">BLOG</div></a>
+        <a href="/sobre.html" class="sobre icon"><img src="" alt=""><div class="text protest-revolution-regular">SOBRE</div></a>
+    </div>
+    <div class="entrada">
+    <img src="imagens/pngegg.png" class="nuvem n3 np" id="n1">
+    <img src="imagens/pngegg.png" class="nuvem n1 nm" id="n2">
+    <img src="imagens/pngegg.png" class="nuvem n2 nf" id="n3">
     </div>
     <script>
     var currentTime = new Date().getHours();
@@ -21,24 +34,28 @@
     const n1 = document.getElementById("n1")
     const n2 = document.getElementById("n2")
     const n3 = document.getElementById("n3")
+    const sol = document.getElementById("circulo")
 
     if (6 <= currentTime && currentTime < 12) {
        document.body.style.backgroundColor = "orange";
        n1.style.filter = "brightness(120%)"
        n2.style.filter = "brightness(120%)"
        n3.style.filter = "brightness(120%)"
+       sol.style.backgroundColor = "red"
     }else if (12 <= currentTime && currentTime < 17) {
 
-        document.body.style.backgroundColor = "lightblue";
+        document.body.style.backgroundColor = "blue";
         n1.style.filter = "brightness(150%)"
         n2.style.filter = "brightness(150%)"
         n3.style.filter = "brightness(150%)"
+        sol.style.backgroundColor = "white"
     }else {
         document.body.style.backgroundColor = "red";
         noite.style.filter = "brightness(20%)"
         n1.style.filter = "brightness(50%)"
         n2.style.filter = "brightness(50%)"
         n3.style.filter = "brightness(50%)"
+        backgroundColor = "yellow"
     }
 
 </script>

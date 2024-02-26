@@ -1,21 +1,126 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap')
+
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+.horario{
+    position: fixed;
+    right: 100px;
+    top: 60px;
+    transform: scale(5);
+}
 body{
     overflow-x: hidden;
 }
+.circulo{
+    position: absolute;
+    top: 0;
+    right: 35%;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: white;
+    transition: 0.8s;
+    z-index: -1;
+}
+body:hover .circulo{
+    top: -180px;
+    transition: 0.8s;
+}
 .fundo{
     display: flex;
+    width: 100%;
     justify-content: center;
-    padding-top: 700px;
+    transform: translateY(1200px);
+    transition: ease-in 0.5s;
+    position: absolute;
+}
+body:hover .horario{
+    transition: ease-in-out 0.8s;
+    transform: scale(2);
+}
+body:hover .icon{
+    opacity: 90%;
+    transition: all 0.5s;
+}
+body:hover .entrada {
+    opacity: 1;
+}
+.entrada{
+    opacity: 0;
+    transition: all 0.8s;
 }
 body:hover .fundo{
-    transform: translateY(-500px);
+    transform: translateY(1000px);
 }
 
+.icon{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 0px 1px red;
+    opacity: 0;
+
+}
+.icon:hover{
+    transform: scale(1.4);
+    animation: rodar 1.5s infinite alternate;
+    opacity: 100%;
+}
+.icon:hover .text{
+    opacity: 0;
+}
+.cinema{
+    position: absolute;
+    bottom: 180px;
+    right: 680px;
+    transform: rotate(30deg);
+    
+}
+.video{
+    z-index: 99;
+}
+.arcade{
+    position: absolute;
+    bottom: 350px;
+    transform: rotate(15deg);
+    
+}
+.blog{
+    position: absolute;
+    bottom: 400px;
+    right: 350px;
+    transform: rotate(-45deg);
+}
+.sobre{
+    position: absolute;
+    left: 360px;
+    bottom: 230px;
+    transform: rotate(-20deg);
+}
+
+.text{
+    position: absolute;
+    font-size:50px ;
+    letter-spacing: -4px;
+    text-align: center;
+    left: -10px;
+    bottom: 0;
+    color: black;
+    text-shadow: 0px 2px 0px red;
+ 
+}
+.protest-revolution-regular {
+    font-family: "Protest Revolution", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 .city{
     transition: ease-in-out 0.8s;
     position: absolute;
@@ -113,4 +218,29 @@ transform: translateX(100px);
     }
    
 
+}
+@keyframes rodar{
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(90deg);
+        
+    }
+    40%{
+        transform: scale(0.5);
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 0px 0px 0px 20px red;
+        
+    }
+   
+    75%{
+        transform: rotate(270deg);
+        
+    }
+    0%{
+        transform: rotate(360deg);
+    }
 }
