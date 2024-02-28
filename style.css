@@ -7,6 +7,7 @@
 }
 body{
     background-image: linear-gradient(rgb(29, 5, 5),red,red,red,red,rgb(29, 8, 8));
+    background-size: cover;
     height: 100vh;
     overflow: hidden;
 }
@@ -23,7 +24,48 @@ body{
     font-weight: 400;
     font-style: normal;
   }
-  
+  .estrela{
+    position: absolute;
+    right: -40px;
+    transform: translateX(1000px);
+    transition: all 0.2s;
+    z-index: -100;
+  }
+  body:hover .estrela{
+    transform: translate(0px);
+    transition: all 0.2s
+  }
+  body:hover .joker{
+    translate: 0px;
+    transition: 0.3s;
+  }
+  body:hover .sombra{
+    transition: 0.2s;
+  }
+  .e1{
+    bottom: 300px;
+    right: -100px;
+    scale: 1.7;
+  }
+  .e2{
+    bottom: 100px;
+    right: -300px;
+    rotate:45deg;
+    scale: 1.9;
+  }
+  .e3{
+    top: 80px;
+    rotate: 55deg;
+    right: -180px;
+    scale: 0.5;
+  }
+  .e4{
+    
+    scale: 3;
+  }
+  .joker{
+    translate:1000px ;
+  }
 section{
     margin-top: 100px;
     display: flex;
@@ -242,13 +284,14 @@ footer{
 }
 body:hover .adaga{
     opacity: 1;
-    transition:  ease-in-out 0.1s;
+    transition:  ease-in-out 0.05s;
     top: 81px;
     right: 45vh;
+    
 }
 body:hover .efeito{
     opacity: 1;
-    transition: ease-in 0.3s;
+    transition: ease-in-out 0.07s;
     height: 137px;
     
 }

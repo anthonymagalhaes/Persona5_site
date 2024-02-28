@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <div class="horario" id="horas">10:00</div>
+        <div class="horario" id="horas"><div id="hora"></div><div class="po">:</div><div id="minutes"></div></div>
         <div class="circulo lua sol" id="circulo"></div>
     </header>
     <a href="/index.html"><img src="imagens/SEMAC_--removebg-preview.png" alt="" class="voltar"></a>
@@ -25,37 +25,48 @@
     </div>
     <div class="entrada">
     <img src="imagens/pngegg.png" class="nuvem n3 np" id="n1">
-    <img src="imagens/pngegg.png" class="nuvem n1 nm" id="n2">
+    <img src="imagens/—Pngtree—cloud_3554579.png" class="nuvem n1 nm" id="n2">
     <img src="imagens/pngegg.png" class="nuvem n2 nf" id="n3">
     </div>
     <script>
-    var currentTime = new Date().getHours();
+    
     const noite = document.getElementById("noite")
     const n1 = document.getElementById("n1")
     const n2 = document.getElementById("n2")
     const n3 = document.getElementById("n3")
     const sol = document.getElementById("circulo")
-
-    if (6 <= currentTime && currentTime < 12) {
+    let currentHour = new Date().getHours()
+    let currentMinutes = new Date().getMinutes()
+    const horas = document.getElementById("hora")
+    const minutes = document.getElementById("minutes")
+    
+    const relogio = setInterval(function time(){
+        let currentHour = new Date().getHours()
+        let currentMinutes = new Date().getMinutes()
+        
+        horas.innerHTML = currentHour
+        minutes.innerHTML = currentMinutes
+    })
+    if (6 <= currentHour && currentHour < 12) {
        document.body.style.backgroundColor = "orange";
        n1.style.filter = "brightness(120%)"
        n2.style.filter = "brightness(120%)"
        n3.style.filter = "brightness(120%)"
        sol.style.backgroundColor = "red"
-    }else if (12 <= currentTime && currentTime < 17) {
+    }else if (12 <= currentHour && currentHour < 17) {
 
         document.body.style.backgroundColor = "blue";
         n1.style.filter = "brightness(150%)"
         n2.style.filter = "brightness(150%)"
         n3.style.filter = "brightness(150%)"
-        sol.style.backgroundColor = "white"
+        sol.style.backgroundColor = "yellow"
     }else {
         document.body.style.backgroundColor = "red";
         noite.style.filter = "brightness(20%)"
         n1.style.filter = "brightness(50%)"
         n2.style.filter = "brightness(50%)"
         n3.style.filter = "brightness(50%)"
-        backgroundColor = "yellow"
+        sol.style.backgroundColor = "white"
     }
 
 </script>
