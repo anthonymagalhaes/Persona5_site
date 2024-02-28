@@ -1,0 +1,67 @@
+*{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+body{
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    overflow:hidden;
+}
+.joker1{
+    scale: 1;
+    opacity: 0;
+    position: absolute;
+    right: 1000px;
+    top: 200px;
+    z-index: 1;
+}
+body:hover .joker1{
+     animation: chegando 0.6s ;
+     opacity: 1;
+     transition: 0.5s;
+     right: 500px;
+}
+.voltar{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    height: 300px;
+}
+.voltar:hover{
+    filter: invert(1);
+    padding: 20px;
+    transform: rotate(-5deg);
+    transition: ease-in-out 0.6s;
+}
+.fundo{
+    position: absolute;
+    right: 500px;
+    top: 200px;
+    z-index: -1;
+}
+.fundo2{
+    height: 150vh;
+    width: 200vh;
+    rotate: 35deg;
+    position: absolute;
+    top: -80vh;
+    right: -63vh;
+    background-color: white;
+    z-index: -2;
+}
+.corda{
+    height: 200vh;
+    width: 2px;
+    background-color: red;
+    
+}
+@keyframes chegando{
+   0%{
+       rotate: 40deg;
+   }
+   
+   100%{
+    rotate: 0deg;
+   }
+}
