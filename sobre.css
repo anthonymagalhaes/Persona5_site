@@ -15,13 +15,16 @@ body{
     right: 1000px;
     top: 200px;
     z-index: 1;
+    
 }
 body:hover .joker1{
      animation: chegando 0.6s ;
      opacity: 1;
      transition: 0.5s;
-     right: 500px;
+     right: 700px;
+     rotate: -5deg;
 }
+
 .voltar{
     position: absolute;
     left: 10px;
@@ -34,27 +37,38 @@ body:hover .joker1{
     transform: rotate(-5deg);
     transition: ease-in-out 0.6s;
 }
+
 .fundo{
     position: absolute;
-    right: 500px;
+    scale: 1.5;
+    right: 430px;
     top: 200px;
     z-index: -1;
 }
 .fundo2{
     height: 150vh;
-    width: 200vh;
+    width: 220vh;
     rotate: 35deg;
     position: absolute;
     top: -80vh;
-    right: -63vh;
+    right: -73vh;
     background-color: white;
     z-index: -2;
 }
-.corda{
-    height: 200vh;
-    width: 2px;
-    background-color: red;
-    
+.estrela{
+    position: absolute;
+    right: 300px;
+    top: 190px;
+    scale: 1.5;
+    transition: all 0.2s;
+    z-index: 3;
+    rotate: -28deg;
+}
+.e2{
+    right: 100px;
+    top: 100px;
+    rotate: 75deg;
+    scale: 1.8;
 }
 @keyframes chegando{
    0%{
@@ -62,6 +76,6 @@ body:hover .joker1{
    }
    
    100%{
-    rotate: 0deg;
+    rotate: -5deg;
    }
 }
