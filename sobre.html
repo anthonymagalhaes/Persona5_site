@@ -16,13 +16,20 @@
     <img src="/imagens/Design-sem-nome-unscreen.gif" class="estrela">
     <img src="/imagens/Design-sem-nome-unscreen.gif" class="estrela e2">
     <img src="/imagens/Design-sem-nome-unscreen.gif" class="estrela e3">
-    <div class="corda"></div>
+    <div class="botao" onclick="MENU()">TESTE
+        <div class="efeito"></div>
+    </div>
     <script>
        setTimeout(function() {
        setInterval(function() {
             $('#img1').attr('src',$('#img1').attr('src'))
        },1)
        }, 300)
+
+       function MENU(){
+        const img1 = document.getElementById("img1")
+        img1.style.animation = "saindo 0.5s "
+       }
     </script>
 </body>
 </html>

@@ -54,6 +54,10 @@ body:hover .joker1{
     right: -73vh;
     background-color: white;
     z-index: -2;
+    animation-name: saindo;
+    animation-delay: 0.5s;
+    animation-duration: 0.8s;
+    animation-iteration-count: 1;
 }
 .estrela{
     position: absolute;
@@ -70,6 +74,15 @@ body:hover .joker1{
     rotate: 75deg;
     scale: 1.8;
 }
+.botao{
+    color: white;
+    font-size: 30px;
+    z-index: 100;
+    position: absolute;
+    bottom: 40px;
+    right: 50%;
+    translate: -50%;
+}
 @keyframes chegando{
    0%{
        rotate: 40deg;
@@ -77,5 +90,15 @@ body:hover .joker1{
    
    100%{
     rotate: -5deg;
+   }
+}
+@keyframes saindo{
+   0%{
+    rotate: 35deg;
+   }
+   100%{
+    rotate: 100deg;
+    top: -40vh;
+    right: -90vh;
    }
 }
